@@ -33,6 +33,8 @@ module.exports = tseslint.config(
         "single",
         { "avoidEscape": true }
       ],
+      // TS rules
+      "@typescript-eslint/no-unused-vars": "warn",
       // Angular rules
       "@angular-eslint/directive-selector": [
         "error",
