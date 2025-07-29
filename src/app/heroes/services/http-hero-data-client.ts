@@ -1,10 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { HeroRepository } from '../domain/hero-repository';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, map, throwError } from 'rxjs';
 import { CreateHero, Hero, UpdateHero } from '../domain/models/hero';
 import { HeroFilter } from '../domain/models/hero-filter';
-import { Pagination } from '../../shared/models/pagination';
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { heroRequestAdapter } from '../adapters/hero-pagination-adapter';
 
 @Injectable({

@@ -4,11 +4,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "esModuleInterop": true, // Remove the Warning
     "types": [
-      "jasmine"
+      "jest"
     ]
   },
   "include": [
     "src/**/*.ts"
-  ]
+, "setup-jest.ts"  ]
 }

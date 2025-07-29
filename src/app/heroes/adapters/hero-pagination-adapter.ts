@@ -9,7 +9,7 @@ interface HeroResponseDto {
 }
 
 export function heroRequestAdapter({ httpResponse, page, perPage}: HeroResponseDto): Pagination<Hero> {
-    const dataLength = Number(httpResponse.headers.get('X-Total-Count')) || 0;
+    const dataLength = Number(httpResponse.headers.get('X-Total-Count')) || httpResponse.body?.length || 0;
     const totalPages = Math.ceil(dataLength / perPage);
     const actualPage = page;
     return {
