@@ -1,59 +1,85 @@
-# RIUFrontend
+# 🦸‍♂️ RIU Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+Aplicación desarrollada en Angular 20 siguiendo principios de **Clean Architecture**. Permite gestionar entidades de tipo `Hero` conectándose a una API mockeada con `json-server`.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Cómo levantar el proyecto
+
+### 1. Instalar dependencias
+
+```bash
+yarn install
+```
+
+### 2. Levantar la API (en una terminal aparte)
+
+```bash
+yarn api
+```
+
+### 3. Levantar la aplicación Angular
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La app estará disponible en: [http://localhost:4200](http://localhost:4200)
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🧪 Comandos útiles
 
-```bash
-ng generate component component-name
+- **Lint**
+  ```bash
+  yarn lint
+  ```
+
+- **Tests unitarios (Jest)**
+  ```bash
+  yarn test:watch      # Para ejecutar tests en modo watch
+  yarn test:coverage   # Para ver cobertura de código
+  ```
+
+---
+
+## 🧱 Arquitectura
+
+Este proyecto aplica **Clean Architecture** y Angular moderno con `standalone components`, `signals` y organización por funcionalidades.
+
+```
+src/
+└── app/
+    ├── app.config.ts         # Configuración principal de la app
+    ├── app.routes.ts         # Definición de rutas
+    ├── app.ts                # Bootstrap
+    ├── heroes/               # Feature principal
+    │   ├── adapters/         # Adaptadores entre infraestructura y dominio
+    │   ├── components/       # Componentes de UI (formularios, tablas, etc.)
+    │   ├── domain/           
+    │   │   ├── models/       # Entidades y tipos (hero.ts, filter, etc.)
+    │   │   ├── hero-provider.ts
+    │   │   └── hero-repository.ts
+    │   ├── services/         # Implementaciones (ej: cliente HTTP)
+    └── shared/
+        ├── models/           # Tipos y utilidades comunes
+        └── utils/            # Helpers generales (patch-object, etc.)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 📦 Convenciones y buenas prácticas
 
-## Building
+- Se utiliza **Conventional Commits** para mantener un historial limpio.
+- Estructura basada en separación de responsabilidades: presentación, aplicación, dominio e infraestructura.
+- Testing con **Jest** y buenas prácticas con **ESLint**.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🛠 Stack
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 20 (standalone, signals)
+- TypeScript
+- json-server (API mock)
+- Jest (testing)
+- ESLint
