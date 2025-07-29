@@ -1,0 +1,138 @@
+{
+    "heroes": [
+        {
+            "id": 1,
+            "name": "Spider-Man",
+            "realName": "Peter Parker",
+            "powers": [
+                "Sentido arácnido",
+                "Fuerza sobrehumana",
+                "Agilidad",
+                "Trepar muros",
+                "Lanzar telarañas"
+            ],
+            "origin": "Estados Unidos",
+            "weakness": "Sentido de responsabilidad excesivo",
+            "team": "Los Vengadores",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0c/Spiderman50.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Batman",
+            "realName": "Bruce Wayne",
+            "powers": [
+                "Inteligencia táctica",
+                "Combate cuerpo a cuerpo",
+                "Uso de tecnología avanzada"
+            ],
+            "origin": "Gotham City, Estados Unidos",
+            "weakness": "Humano sin poderes sobrenaturales",
+            "team": "Liga de la Justicia",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/88/Batman_Infobox.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Wonder Woman",
+            "realName": "Diana Prince",
+            "powers": [
+                "Fuerza sobrehumana",
+                "Vuelo",
+                "Inmortalidad",
+                "Lazo de la verdad",
+                "Reflejos mejorados"
+            ],
+            "origin": "Temiscira",
+            "weakness": "Compasión humana",
+            "team": "Liga de la Justicia",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/ed/Wonder_Woman_%28DC_Rebirth_version%29.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Iron Man",
+            "realName": "Tony Stark",
+            "powers": [
+                "Armadura tecnológica",
+                "Vuelo",
+                "Armas avanzadas",
+                "Intelecto genial"
+            ],
+            "origin": "Estados Unidos",
+            "weakness": "Dependencia de su traje",
+            "team": "Los Vengadores",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e0/Iron_Man_bleeding_edge.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Superman",
+            "realName": "Clark Kent",
+            "powers": [
+                "Fuerza sobrehumana",
+                "Vuelo",
+                "Visión láser",
+                "Invulnerabilidad",
+                "Súper oído"
+            ],
+            "origin": "Krypton",
+            "weakness": "Kryptonita",
+            "team": "Liga de la Justicia",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/35/Supermanflying.png"
+        },
+        {
+            "id": 6,
+            "name": "Capitana Marvel",
+            "realName": "Carol Danvers",
+            "powers": [
+                "Vuelo",
+                "Fuerza sobrehumana",
+                "Proyección de energía",
+                "Absorción de energía"
+            ],
+            "origin": "Estados Unidos / Kree",
+            "team": "Los Vengadores",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/85/Captain_Marvel_%28Carol_Danvers%29.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Black Panther",
+            "realName": "T'Challa",
+            "powers": [
+                "Agilidad mejorada",
+                "Fuerza mejorada",
+                "Tecnología de Wakanda",
+                "Instinto felino"
+            ],
+            "origin": "Wakanda",
+            "team": "Los Vengadores",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/9f/Black_Panther_OS_Vol_1_2.png"
+        },
+        {
+            "id": 8,
+            "name": "Flash",
+            "realName": "Barry Allen",
+            "powers": [
+                "Súper velocidad",
+                "Viaje en el tiempo",
+                "Reflejos aumentados",
+                "Curación acelerada"
+            ],
+            "origin": "Estados Unidos",
+            "weakness": "Impulsividad",
+            "team": "Liga de la Justicia",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/ea/The_Flash_%28Barry_Allen%29.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Hulk",
+            "realName": "Bruce Banner",
+            "powers": [
+                "Fuerza ilimitada",
+                "Regeneración",
+                "Resistencia extrema"
+            ],
+            "origin": "Estados Unidos",
+            "weakness": "Falta de control emocional",
+            "team": "Los Vengadores",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/59/Hulk_%28comics_character%29.png"
+        }
+    ]
+}
