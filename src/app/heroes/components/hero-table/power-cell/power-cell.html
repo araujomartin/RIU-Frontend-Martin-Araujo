@@ -1,0 +1,38 @@
+<div>
+    @if (firstPower()) {
+        <p-tag  [value]="firstPower()!"
+                severity="primary"
+                [rounded]="true" />
+        @if (powers()!.length > 1) {
+            <p-button   type="button"
+                        size="small"
+                        severity="contrast"
+                        variant="text"
+                        styleClass="ml-1"
+                        label="+{{powers()!.length - 1}}"
+                        (onClick)="overlay.show($event)"
+                        (keyup.enter)="overlay.show($event)">
+                
+            </p-button>
+        }
+    }@else {
+        <span>
+            -
+        </span>
+    }
+</div>
+<p-popover #overlay>
+    <div class="mb-2 font-semibold">
+        <i class="pi pi-thunder"></i>
+        <span>
+            Todos los poderes ({{powers()!.length}})
+        </span>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        @for (p of powers(); track p) {
+                <p-tag  [value]="p"
+                    severity="primary"
+                    [rounded]="true" />
+        }
+    </div>
+</p-popover>

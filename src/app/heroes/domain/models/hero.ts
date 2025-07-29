@@ -5,9 +5,9 @@ export interface Hero {
     realName: string;
     powers: string[];
     origin: string;
-    weakness?: string;
-    team?: string;
-    imageUrl?: string;
+    weakness: string | null;
+    team: string | null;
+    imageUrl: string | null;
 }
 
 export type CreateHero = Omit<Hero, 'id'>;

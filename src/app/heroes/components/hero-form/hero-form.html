@@ -1,0 +1,160 @@
+<p-dialog   [(visible)]="visible"
+            [header]="selectedHero() ? 'Modificar héroe' : 'Crear héroe'"
+            [draggable]="false"
+            [modal]="true"
+            [style]="{width: '40vw'}"
+            [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+    <form [formGroup]="heroForm()">
+        <div class="flex flex-column field fluid form-field-container">
+            @let nameErr = heroForm().controls.name.touched && heroForm().controls.name.errors;
+            <label for="name" class="ml-1 mb-1 font-bold">
+                Nombre
+            </label>
+            <input  pInputText
+                    formControlName="name"
+                    id="name"
+                    type="text"
+                    placeholder="Nombre del héroe"
+            />
+            @if (nameErr) {
+                <small class="mt-1 inline-block px-1 form-error">
+                    {{ nameErr['required'] ? 'El nombre es requerido' : '' }}
+                    {{ nameErr['maxlength'] ? 'El nombre debe tener menos de 50 caracteres' : '' }}
+                </small>
+            }
+        </div>
+        <div class="mt-4 flex flex-column field fluid form-field-container">
+            @let realNameErr = heroForm().controls.realName.touched && heroForm().controls.realName.errors;
+            <label for="realName" class="ml-1 mb-1 font-bold">
+                Nombre real
+            </label>
+            <input  pInputText
+                    formControlName="realName"
+                    id="realName"
+                    type="text"
+                    placeholder="Nombre real"
+            />
+            @if (realNameErr) {
+                <small class="mt-1 inline-block px-1 form-error">
+                    {{ realNameErr['required'] ? 'El nombre real es requerido' : '' }}
+                    {{ realNameErr['maxlength'] ? 'El nombre real debe tener menos de 100 caracteres' : '' }}
+                </small>
+            }
+        </div>
+                <div class="mt-4 flex flex-column field fluid form-field-container">
+            @let originErr = heroForm().controls.origin.touched && heroForm().controls.origin.errors;
+            <label for="origin" class="ml-1 mb-1 font-bold">Origen</label>
+            <input  pInputText
+                    formControlName="origin"
+                    id="origin"
+                    type="text"
+                    placeholder="Origen del héroe"
+            />
+            @if (originErr) {
+                <small class="mt-1 inline-block px-1 form-error">
+                    {{ originErr['required'] ? 'El origen es requerido' : '' }}
+                    {{ originErr['maxlength'] ? 'El origen debe tener menos de 100 caracteres' : '' }}
+                </small>
+            }
+        </div>
+        <div class="mt-4 flex flex-column field fluid">
+            <label for="powers" class="ml-1 mb-1 font-bold">Poderes
+                <small>
+                    (opcional)
+                </small>
+            </label>
+            <div class="mb-2">
+                <p-input-group  class="w-full">
+                    <input      pInputText
+                                #search
+                                type="text"
+                                placeholder="Agregar poder"
+                            />
+                    <p-button
+                        severity="primary"
+                        type="submit"
+                        (onClick)="addPower(search.value); search.value = ''"
+                        icon="pi pi-plus" />
+                </p-input-group>
+                <small class="mt-1 inline-block px-1">
+                    Escribe y presiona enter para agregar
+                </small>
+            </div>
+            <div class="power-box">
+                @for (power of heroPowers(); track $index) {
+                    <p-tag severity="primary">
+                        <span>
+                            {{ power }}
+                        </span>
+                        <span style="color: #222; cursor: pointer" (click)="removePower($index)">
+                            &times;
+                        </span>
+                    </p-tag>
+                    }@empty {
+                        <span class="text-xs opacity-70">
+                            Sin poderes agregados
+                        </span>
+                    }
+                    
+            </div>
+        </div>
+        <div class="mt-4 flex flex-column field fluid form-field-container">
+            <label for="weakness" class="ml-1 mb-1 font-bold">Debilidad
+                <small>
+                    (opcional)
+                </small>
+            </label>
+            <input  pInputText
+                    formControlName="weakness"
+                    id="weakness"
+                    type="text"
+                    placeholder="Debilidad"
+            />
+        </div>
+        <div class="mt-4 flex flex-column field fluid form-field-container">
+            <label for="team" class="ml-1 mb-1 font-bold">Equipo
+                <small>
+                    (opcional)
+                </small>
+            </label>
+            <input  pInputText
+                    formControlName="team"
+                    id="team"
+                    type="text"
+                    placeholder="Equipo"
+            />
+        </div>
+        <div class="mt-4 flex flex-column field fluid form-field-container">
+            <label for="imageUrl" class="ml-1 mb-1 font-bold">Imagen
+                <small>
+                    (URL)
+                </small>
+            </label>
+            <input  pInputText
+                    formControlName="imageUrl"
+                    id="imageUrl"
+                    type="text"
+                    placeholder="URL de la imagen (opcional)"
+            />
+        </div>
+
+    </form>
+    <ng-template pTemplate="footer">
+        <div class="flex justify-content-end gap-2">
+            <p-button   (click)="visible.set(false)"
+                        type="button"
+                        label="Cancelar"
+                        severity="secondary"
+                        styleClass="w-full sm:w-10rem">
+            </p-button>
+            <p-button   type="button"
+                        styleClass="w-full sm:w-10rem"
+                        [loading]="isLoading()"
+                        [label]="selectedHero() ? 'Guardar' : 'Crear'"
+                        (onClick)="selectedHero() ? updateHero() : createHero()"
+                        >
+            </p-button>
+        </div>
+    </ng-template>
+</p-dialog>

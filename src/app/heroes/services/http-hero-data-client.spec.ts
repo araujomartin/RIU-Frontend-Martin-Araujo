@@ -63,6 +63,10 @@ describe('HttpHeroDataClient', () => {
             const req = httpController.expectOne(service['baseUrl']);
             expect(req.request.method).toBe('POST');
             req.flush(null, { status: 500, statusText: 'Internal Server Error' });
+
+            if (!createError) {
+                fail('should be called');
+            }
         });
     });
 

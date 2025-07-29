@@ -1,0 +1,16 @@
+<section>
+    <h1 class="text-center text-4xl font-semibold mb-2">
+        Hero Manager
+    </h1>
+    <p class="text-center text-secondary">
+        Sistema de gestión de superhéroes con funcionalidades CRUD completas
+    </p>
+    <p-card >
+        <app-hero-table [paginatedHeroes]="heroRx.value()"
+                        [isLoading]="heroRx.isLoading()"
+                        [perPage]="heroFilters().perPage"
+                        (changePage)="updatePage($event)"
+                        (nameFilterChange)="filterByName($event)"
+                        />
+    </p-card>
+</section>

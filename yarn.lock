@@ -217,6 +217,13 @@
   dependencies:
     "@angular-eslint/bundled-angular-compiler" "20.1.1"
 
+"@angular/animations@^20.0.0":
+  version "20.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-20.1.3.tgz#87d41cdddbc0cbdc298eb46d3130f8f16c3d592d"
+  integrity sha512-3mkWhcHw2CbfvvjfJYMWjXbTtNHAtZDiVuaqQX4r9i0rPbQ7DqoM1zSgC6XWainWqxnfCHZIZFoI6PKEBVKSrg==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/build@^20.0.0":
   version "20.1.3"
   resolved "https://registry.yarnpkg.com/@angular/build/-/build-20.1.3.tgz#163758f0d2033256053185473faf7539e691fd37"
@@ -250,6 +257,14 @@
     watchpack "2.4.4"
   optionalDependencies:
     lmdb "3.4.1"
+
+"@angular/cdk@^20.0.0":
+  version "20.1.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-20.1.3.tgz#696e6f3eece8ffb96420940799b10db234231128"
+  integrity sha512-TO/OBOPWIDJe+0g4S+ye6hewnWOhgWGa4iygvAlmQ77nyqhioHT60puyaDZRATxKh9k6KVmg9cPAk1lYbOFvaA==
+  dependencies:
+    parse5 "^8.0.0"
+    tslib "^2.3.0"
 
 "@angular/cli@^20.0.0":
   version "20.1.3"
@@ -1922,6 +1937,32 @@
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
+
+"@primeuix/styled@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-0.7.1.tgz#e2563e52369a103aeb6e00cafe5d676dac876f9e"
+  integrity sha512-4L42Vlse/uL68ND0nLB0T7x0NKQJXeYY9dVLMt/aSv7VU/IFdKEi/1awPZkHKCKgN2jO5cxB/BJfB+1Wxy4T1w==
+  dependencies:
+    "@primeuix/utils" "^0.6.0"
+
+"@primeuix/styles@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@primeuix/styles/-/styles-1.2.2.tgz#2ab66a8fbb88dee7438e7c5ca0a765888c00e2d6"
+  integrity sha512-yOyEVLYXJ+ec1qBzE83hJeaCRJZEKcEIa+WPTycHbTPAJ75HdZwqVgQQnxPpzPNz6vb7XbxRkIDTqAL3OPyy0Q==
+  dependencies:
+    "@primeuix/styled" "^0.7.1"
+
+"@primeuix/themes@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@primeuix/themes/-/themes-1.2.2.tgz#1d2f5d81ed228dc1466c7d466ee32f0b93956716"
+  integrity sha512-2tTtrKechPAiAwDDPgr8DSZoKgT5Zq4Pd2yrxyTUM6Fu/BBUmBYuJ32prU8pbRqhWydThT+iMvc/nZruY58Fqw==
+  dependencies:
+    "@primeuix/styled" "^0.7.1"
+
+"@primeuix/utils@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.6.0.tgz#878166e330e5d544a439ed0402526a3ae1454ed0"
+  integrity sha512-ULpB87ImNAiX36OMtyDeRceWB7N/mVlh6gGLqp/lx8UMKZlLIQH/UAFND86hYXHwNpXeNKcWfMGreb0Oc0hcZA==
 
 "@rollup/rollup-android-arm-eabi@4.44.1":
   version "4.44.1"
@@ -5799,6 +5840,13 @@ parse5@^7.0.0, parse5@^7.2.1:
   dependencies:
     entities "^6.0.0"
 
+parse5@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-8.0.0.tgz#aceb267f6b15f9b6e6ba9e35bfdd481fc2167b12"
+  integrity sha512-9m4m5GSgXjL4AjumKzq1Fgfp3Z8rsvjRNbnkVwfu2ImRqE5D0LnY2QfDen18FSY9C573YU5XxSapdHZTZ2WolA==
+  dependencies:
+    entities "^6.0.0"
+
 parseurl@^1.3.3, parseurl@~1.3.2, parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
@@ -5937,6 +5985,26 @@ pretty-format@30.0.5, pretty-format@^30.0.0:
     "@jest/schemas" "30.0.5"
     ansi-styles "^5.2.0"
     react-is "^18.3.1"
+
+primeflex@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/primeflex/-/primeflex-4.0.0.tgz#660d9d8494ce8d51bae89db0cc8b47fceda51035"
+  integrity sha512-UOEZCRjR36+sm5bUpDhS1xbA068l9VC6y1aTNVqQPtXuKIdPTqAWHRUxj3mKAoPrQ9W373ooJJMgNVXfiaw04g==
+
+primeicons@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-7.0.0.tgz#6b25c3fdcb29bb745a3035bdc1ed5902f4a419cf"
+  integrity sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==
+
+primeng@^20.0.1:
+  version "20.0.1"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-20.0.1.tgz#653a9c6a03279610aa8b2292885e648daae143a2"
+  integrity sha512-TDt0e8/fwVCRghXPzDiuZK679/d0jYU7sZN3/Xm2YWsGLe0W2uewLuaxzCj1HYT4RsIFwIYtumJooWq13SNPaA==
+  dependencies:
+    "@primeuix/styled" "^0.7.1"
+    "@primeuix/styles" "^1.2.2"
+    "@primeuix/utils" "^0.6.0"
+    tslib "^2.3.0"
 
 proc-log@^5.0.0:
   version "5.0.0"

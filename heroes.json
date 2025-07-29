@@ -1,0 +1,91 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Spider-Man",
+      "realName": "Peter Parker",
+      "powers": [
+        "Sentido arácnido",
+        "Fuerza sobrehumana",
+        "Agilidad",
+        "Trepar muros"
+      ],
+      "origin": "Estados Unidos",
+      "weakness": "Sentido de responsabilidad excesivo",
+      "team": "Los Vengadores",
+      "imageUrl": "https://i.pinimg.com/736x/f6/aa/24/f6aa2407d3ca6532e0304d6cd0e9291d.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Batman",
+      "realName": "Bruce Wayne",
+      "powers": [
+        "Inteligencia táctica",
+        "Combate cuerpo a cuerpo",
+        "Uso de tecnología avanzada"
+      ],
+      "origin": "Gotham City, Estados Unidos",
+      "weakness": "Humano sin poderes sobrenaturales",
+      "team": "Liga de la Justicia",
+      "imageUrl": "https://image.api.playstation.com/cdn/UP1018/CUSA00133_00/XlkEcZSBzuJPIJo8BI7l0KuY0hBYrO8c.png?w=440&thumb=false"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "realName": "Diana Prince",
+      "powers": [
+        "Fuerza sobrehumana",
+        "Vuelo",
+        "Inmortalidad",
+        "Lazo de la verdad",
+        "Reflejos mejorados"
+      ],
+      "origin": "Temiscira",
+      "weakness": "Compasión humana",
+      "team": "Liga de la Justicia",
+      "imageUrl": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/05/19/10/wonder-woman.jpg?width=1200&height=1200&fit=crop"
+    },
+    {
+      "id": 4,
+      "name": "Iron Man",
+      "realName": "Tony Stark",
+      "powers": [
+        "Armadura tecnológica",
+        "Vuelo",
+        "Armas avanzadas",
+        "Intelecto genial"
+      ],
+      "origin": "Estados Unidos",
+      "weakness": "Dependencia de su traje",
+      "team": "Los Vengadores",
+      "imageUrl": "https://steamavatar.io/iron-man/Download"
+    },
+    {
+      "id": 5,
+      "name": "Superman",
+      "realName": "Clark Kent",
+      "powers": [
+        "Fuerza sobrehumana",
+        "Vuelo",
+        "Visión láser",
+        "Invulnerabilidad",
+        "Súper oído"
+      ],
+      "origin": "Krypton",
+      "weakness": "Kryptonita",
+      "team": "Liga de la Justicia",
+      "imageUrl": "https://preview.redd.it/i-was-watching-avatar-recently-and-it-got-me-thinking-which-v0-4tq76qfgsikb1.jpg?width=640&crop=smart&auto=webp&s=4af638ca2cff61321814902d64de98b5d1f69ae2"
+    },
+    {
+      "name": "El Loco",
+      "realName": "Martin Palermo",
+      "origin": "Argentina",
+      "team": "Boca Juniors",
+      "imageUrl": "https://capsulas.com.co/wp-content/uploads/2017/02/palermo_victorsantamaria-org-ar.jpg",
+      "powers": [
+        "Meter goles"
+      ],
+      "id": 6
+    }
+  ]
+}

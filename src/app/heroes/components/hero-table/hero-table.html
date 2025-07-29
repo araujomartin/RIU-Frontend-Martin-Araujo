@@ -1,0 +1,123 @@
+
+<p-table    [value]="paginatedHeroes()?.data || []"
+            [loading]="isLoading()"
+            [showLoader]="false"
+            >
+    <ng-template #caption>
+        <div class="flex justify-content-between align-items-center">
+            <form class="flex align-items-center gap-1 flex-wrap" (ngSubmit)="filterByName(search.value)">
+                <p-input-group  class="md:w-20rem">
+                    <input      pInputText
+                                #search
+                                type="text"
+                                placeholder="Buscar por nombre..."
+                            />
+                    <p-button
+                        type="submit"
+                        (onClick)="filterByName(search.value)"
+                        icon="pi pi-search" />
+                </p-input-group>
+                <p-button   icon="pi pi-refresh"
+                            severity="secondary"
+                            (onClick)="filterByName(undefined); search.value = ''"/>
+            </form>
+            <p-button   icon="pi pi-plus"
+                        label="Agregar"
+                        (onClick)="selectedHero.set(undefined); heroForm.visible.set(true)"
+                        severity="contrast"
+            />
+        </div>
+    </ng-template>
+    <ng-template #header>
+        <tr>
+            <th>
+                Imagen
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Nombre real
+            </th>
+            <th>
+                Origen
+            </th>
+            <th>
+                Poderes
+            </th>
+            <th style="width: 10%"></th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-hero>
+        <tr>
+            <td>
+                <p-avatar   [image]="hero.imageUrl"
+                            size="xlarge"
+                            shape="circle"
+                />
+            </td>
+            <td>
+                {{ hero.name }}
+            </td>
+            <td>
+                {{ hero.realName }}
+            </td>
+            <td>
+                {{ hero.origin }}
+            </td>
+            <td>
+                <app-power-cell [powers]="hero.powers" />
+            </td>
+            <td>
+                <div class="flex flex-wrap gap-2 justify-content-end">
+                    <p-button   icon="pi pi-pencil"
+                                (onClick)="selectedHero.set(hero); heroForm.visible.set(true)"
+                    />
+                    <p-button   icon="pi pi-trash"
+                                (onClick)="selectedHero.set(hero); displayHeroRemoveDialog.set(true)"
+                                severity="danger"
+                    />
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template #loadingbody>
+        @for (row of [1,2,3,4]; track $index) {
+            <tr>
+                <td style="width: 4rem">
+                    <p-skeleton height="4rem" width="4rem" shape="circle"></p-skeleton>
+                </td>
+                @for (column of [2,3,4,5,6]; track $index) {
+                    <td>
+                        <p-skeleton height="2rem"></p-skeleton>
+                    </td>
+                }
+            </tr>
+        }
+    </ng-template>
+    <ng-template #emptymessage>
+        <tr>
+            <td colspan="6">
+                No se encontraron resultados
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-paginator        (onPageChange)="pageEvent($event)"
+                    [first]="zeroRelativePage()"
+                    [totalRecords]="paginatedHeroes()?.dataLength"
+                    [rows]="perPage()"
+                    [alwaysShow]="false"
+                    [showCurrentPageReport]="true"
+					currentPageReportTemplate="{first} - {last} de {totalRecords} resultados"
+					[showFirstLastIcon]="true" />
+
+
+<app-hero-form #heroForm    [selectedHero]="selectedHero()"
+                            (updatedHero)="updateHero($event)"/>
+
+@if (selectedHero()) {
+    <app-hero-remove    [hero]="selectedHero()!"
+                        (heroRemoved)="removeHero($event)"
+                        [(visible)]="displayHeroRemoveDialog" />
+}
