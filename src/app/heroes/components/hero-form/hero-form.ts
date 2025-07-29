@@ -33,6 +33,7 @@ export class HeroForm {
     public readonly selectedHero = model<Hero | undefined>(undefined);
 
     public readonly updatedHero = output<Hero>();
+    public readonly newHero = output<Hero>();
 
     protected readonly isLoading = signal(false);
 
@@ -90,7 +91,7 @@ export class HeroForm {
 
         this.heroRepository.createHero(newHero).subscribe({
             next: (hero) => {
-                this.updatedHero.emit(hero);
+                this.newHero.emit(hero);
                 this.isLoading.set(false);
                 this.messageService.add({
                     severity: 'success',

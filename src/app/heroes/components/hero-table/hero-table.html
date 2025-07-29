@@ -114,6 +114,7 @@
 
 
 <app-hero-form #heroForm    [selectedHero]="selectedHero()"
+                            (newHero)="newHero($event)"
                             (updatedHero)="updateHero($event)"/>
 
 @if (selectedHero()) {

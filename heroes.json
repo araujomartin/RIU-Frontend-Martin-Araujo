@@ -85,7 +85,8 @@
       "powers": [
         "Meter goles"
       ],
-      "id": 6
+      "id": 6,
+      "weakness": null
     }
   ]
 }

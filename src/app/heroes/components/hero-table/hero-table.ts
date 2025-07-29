@@ -75,6 +75,19 @@ export class HeroTable {
         this.nameFilterChange.emit(partialName? partialName.trim() : undefined);
     }
 
+    newHero(hero: Hero) {
+        if (!this.paginatedHeroes()) {
+            return;
+        }
+
+        this.paginatedHeroes.update((state)=> {
+            return {
+                ...state!,
+                data: [...state!.data, hero]
+            };
+        });
+    }
+
     updateHero(hero: Hero) {
         if (!this.paginatedHeroes()) {
             return;
@@ -93,11 +106,15 @@ export class HeroTable {
             return;
         }
 
-        this.paginatedHeroes.update((state)=> {
-            return {
-                ...state!,
-                data: state!.data.filter((h) => h.id === hero.id ? hero : h)
-            };
-        });
+        const findedHero = this.paginatedHeroes()!.data.find((h) => h.id === hero.id);
+
+        if (findedHero) {
+            this.paginatedHeroes.update((state)=> {
+                return {
+                    ...state!,
+                    data: state!.data.filter((h) => h.id !== hero.id)
+                };
+            });
+        }
     }
 }
