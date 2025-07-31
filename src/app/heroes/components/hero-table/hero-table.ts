@@ -38,6 +38,7 @@ import { HeroRemove } from '../hero-remove/hero-remove';
 export class HeroTable {
     public readonly paginatedHeroes = model<Pagination<Hero>>();
     public readonly isLoading = input(false);
+    public readonly error = input<Error>();
 
     public readonly perPage = input(10);
 

@@ -58,7 +58,6 @@ describe('HeroTable', () => {
         fixture = TestBed.createComponent(HeroTable);
         component = fixture.componentInstance;
         componentRef = fixture.componentRef;
-        // Set required inputs
 
         componentRef.setInput('paginatedHeroes', mockPaginatedHeroes);
         componentRef.setInput('isLoading', false);
@@ -72,7 +71,6 @@ describe('HeroTable', () => {
     });
 
     it('should render hero data', () => {
-        // Check that the hero data is present in the template
         const compiled = fixture.nativeElement as HTMLElement;
         expect(compiled.textContent).toContain('Superman');
         expect(compiled.textContent).toContain('Clark Kent');

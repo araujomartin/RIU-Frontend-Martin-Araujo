@@ -6,7 +6,8 @@
         Sistema de gestión de superhéroes con funcionalidades CRUD completas
     </p>
     <p-card >
-        <app-hero-table [paginatedHeroes]="heroRx.value()"
+        <app-hero-table [paginatedHeroes]="heroRx.error() ? initialValue : heroRx.value()"
+                        [error]="heroRx.error()"
                         [isLoading]="heroRx.isLoading()"
                         [perPage]="heroFilters().perPage"
                         (changePage)="updatePage($event)"

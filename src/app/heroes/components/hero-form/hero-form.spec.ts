@@ -116,8 +116,6 @@ describe('HeroForm', () => {
         
         const form = component['heroForm']();
 
-        console.log(form.controls.name.value);
-
         expect(form.invalid).toBe(false);
         
         component.updateHero();

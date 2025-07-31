@@ -26,7 +26,6 @@ export const appConfig: ApplicationConfig = {
                 preset: Aura
             }
         }),
-        // Custom providers
         provideHeroDataClient()
     ]
 };

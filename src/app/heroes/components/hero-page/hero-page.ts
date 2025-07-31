@@ -6,13 +6,15 @@ import { TableModule } from 'primeng/table';
 import { HeroFilter } from '../../domain/models/hero-filter';
 import { HERO_REPOSITORY } from '../../domain/hero-repository';
 import { HeroTable } from '../hero-table/hero-table';
+import { Pagination } from '../../../shared/models/pagination';
+import { Hero } from '../../domain/models/hero';
 
 @Component({
     selector: 'app-hero-page',
     imports: [
         CardModule,
         TableModule,
-        HeroTable
+        HeroTable,
     ],
     templateUrl: './hero-page.html',
     styleUrl: './hero-page.scss',
@@ -20,6 +22,13 @@ import { HeroTable } from '../hero-table/hero-table';
 })
 export class HeroPage {
     private readonly heroRepository = inject(HERO_REPOSITORY);
+
+    protected readonly initialValue: Pagination<Hero> = {
+        actualPage: 1,
+        totalPages: 1,
+        dataLength: 0,
+        data: []
+    };
 
     protected readonly heroFilters = signal<HeroFilter>({
         page: 1,
@@ -33,12 +42,7 @@ export class HeroPage {
         }) => {
             return this.heroRepository.getAllHeroes(params);
         },
-        defaultValue: {
-            actualPage: 1,
-            totalPages: 1,
-            dataLength: 0,
-            data: []
-        }
+        defaultValue: this.initialValue,
     });
 
     updatePage(page: number) {

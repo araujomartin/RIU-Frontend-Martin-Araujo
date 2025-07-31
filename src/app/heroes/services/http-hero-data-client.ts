@@ -14,7 +14,6 @@ const FAKE_DELAY_MS = 600;
 export class HttpHeroDataClient implements HeroRepository {
     private readonly http = inject(HttpClient);
 
-    // run bun api command to start the server
     private readonly baseUrl = 'http://localhost:3000/heroes';
 
     createHero(hero: CreateHero) {
@@ -25,6 +24,7 @@ export class HttpHeroDataClient implements HeroRepository {
     }
 
     getAllHeroes(payload?: HeroFilter) {
+        
         let params = new HttpParams()
             .set('_page', payload?.page?.toString() || '1')
             .set('_limit', payload?.perPage?.toString() || '10');
@@ -33,7 +33,6 @@ export class HttpHeroDataClient implements HeroRepository {
             params =  params.set('name_like', payload.name);
         }
 
-        // observe: 'response' to get headers and body
         return this.http.get<Hero[]>(this.baseUrl, {
             observe: 'response',
             params
@@ -65,7 +64,7 @@ export class HttpHeroDataClient implements HeroRepository {
     deleteHero(id: number) {
         return this.http.delete<void>(`${this.baseUrl}/${id}`).pipe(
             delay(FAKE_DELAY_MS),
-            map(() => void 0), // map to void since delete does not return anything
+            map(() => void 0), 
             catchError((err) => throwError(() => err))
         );
     }

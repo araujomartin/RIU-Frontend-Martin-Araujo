@@ -98,7 +98,13 @@
     <ng-template #emptymessage>
         <tr>
             <td colspan="6">
-                No se encontraron resultados
+                @if (!error()) {
+                    No se encontraron resultados
+                }@else {
+                    <span class="form-error">
+                        Ha ocurrido un error al cargar el listado de heroes
+                    </span>
+                }
             </td>
         </tr>
     </ng-template>
