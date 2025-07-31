@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, input, model, output, sig
 import { TableModule } from 'primeng/table';
 import { AvatarModule } from 'primeng/avatar';
 import { Hero } from '../../domain/models/hero';
-import { Pagination } from '../../../shared/models/pagination';
+import { Pagination, PaginationRequest } from '../../../shared/models/pagination';
 
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { ButtonModule } from 'primeng/button';
@@ -58,18 +58,21 @@ export class HeroTable {
         return (actualPage - 1) * perPage;
     });
 
-    public readonly changePage = output<number>();
+    public readonly changePageOptions = output<PaginationRequest>();
     public readonly nameFilterChange = output<string | undefined>();
 
     pageEvent(event: PaginatorState) {
         const nextPage = event.page! + 1;
         const { actualPage } = this.paginatedHeroes()!;
 
-        if (nextPage === actualPage) {
+        if (nextPage === actualPage && event.rows === this.perPage()) {
             return;
         }
 
-        this.changePage.emit(nextPage);
+        this.changePageOptions.emit({
+            page: nextPage,
+            perPage: event.rows!
+        });
     }
 
     filterByName(partialName: string | undefined) {

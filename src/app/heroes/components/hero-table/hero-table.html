@@ -113,7 +113,8 @@
                     [first]="zeroRelativePage()"
                     [totalRecords]="paginatedHeroes()?.dataLength"
                     [rows]="perPage()"
-                    [alwaysShow]="false"
+                    [rowsPerPageOptions]="[5,10,25,50]"
+                    [alwaysShow]="true"
                     [showCurrentPageReport]="true"
 					currentPageReportTemplate="{first} - {last} de {totalRecords} resultados"
 					[showFirstLastIcon]="true" />

@@ -6,7 +6,7 @@ import { TableModule } from 'primeng/table';
 import { HeroFilter } from '../../domain/models/hero-filter';
 import { HERO_REPOSITORY } from '../../domain/hero-repository';
 import { HeroTable } from '../hero-table/hero-table';
-import { Pagination } from '../../../shared/models/pagination';
+import { Pagination, PaginationRequest } from '../../../shared/models/pagination';
 import { Hero } from '../../domain/models/hero';
 
 @Component({
@@ -32,7 +32,7 @@ export class HeroPage {
 
     protected readonly heroFilters = signal<HeroFilter>({
         page: 1,
-        perPage: 4
+        perPage: 5
     });
 
     protected readonly heroRx = rxResource({
@@ -45,8 +45,10 @@ export class HeroPage {
         defaultValue: this.initialValue,
     });
 
-    updatePage(page: number) {
-        this.heroFilters.update((filters) => ({ ...filters, page }));
+    updatePage(event: PaginationRequest) {
+        const { page, perPage } = event;
+        
+        this.heroFilters.update((filters) => ({ ...filters, page, perPage }));
     }
 
     filterByName(partialName: string | undefined) {

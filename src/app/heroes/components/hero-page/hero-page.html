@@ -10,7 +10,7 @@
                         [error]="heroRx.error()"
                         [isLoading]="heroRx.isLoading()"
                         [perPage]="heroFilters().perPage"
-                        (changePage)="updatePage($event)"
+                        (changePageOptions)="updatePage($event)"
                         (nameFilterChange)="filterByName($event)"
                         />
     </p-card>
