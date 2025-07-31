@@ -121,11 +121,13 @@
 
 
 <app-hero-form #heroForm    [selectedHero]="selectedHero()"
+                            data-testid="heroForm"
                             (newHero)="newHero($event)"
                             (updatedHero)="updateHero($event)"/>
 
 @if (selectedHero()) {
     <app-hero-remove    [hero]="selectedHero()!"
+                        data-testid="heroRemove"
                         (heroRemoved)="removeHero($event)"
                         [(visible)]="displayHeroRemoveDialog" />
 }

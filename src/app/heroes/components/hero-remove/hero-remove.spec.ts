@@ -4,6 +4,7 @@ import { HeroRemove } from './hero-remove';
 import { MessageService } from 'primeng/api';
 import { HERO_REPOSITORY } from '../../domain/hero-repository';
 import { ComponentRef } from '@angular/core';
+import { EMPTY, of } from 'rxjs';
 
 const mockHeroRepository = {
     deleteHero: jest.fn(),
@@ -50,5 +51,12 @@ describe('HeroRemove', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('should remove hero', () => {
+        const spy = jest.spyOn(mockHeroRepository, 'deleteHero').mockReturnValue(of(EMPTY));
+        component.removeHero();
+        expect(spy).toHaveBeenCalledWith(1);
+        spy.mockClear();
     });
 });

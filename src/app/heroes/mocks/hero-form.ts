@@ -9,5 +9,7 @@ export class MockHeroForm {
     public readonly visible = model(false);
     public readonly selectedHero = model<Hero | undefined>(undefined);
 
+    public readonly newHero = output<Hero>();
+
     public readonly updatedHero = output<Hero>();
 }
