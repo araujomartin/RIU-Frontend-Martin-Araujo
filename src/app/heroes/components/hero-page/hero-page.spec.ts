@@ -54,7 +54,10 @@ describe('HeroPage', () => {
     });
 
     it('should update page', () => {
-        component.updatePage(2);
+        component.updatePage({
+            page: 2,
+            perPage: 5
+        });
         expect(component['heroFilters']().page).toBe(2);
     });
 
