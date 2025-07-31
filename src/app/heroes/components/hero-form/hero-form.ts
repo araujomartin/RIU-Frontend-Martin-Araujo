@@ -57,7 +57,11 @@ export class HeroForm {
         });
     });
 
-    addPower(power: string) {
+    addPower(power: string, inputRef: HTMLInputElement) {
+        if (power === '') {
+            return;
+        }
+        inputRef.value = '';
         const powers = this.heroPowers().slice();
         powers.push(power);
         this.heroPowers.set(powers);
